@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Login</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  
+  </head>
+  <body>
+
+
+<div class="container mt-5 col-md-4">
+  <div class="card-block">
+
+    <!--Header-->
+	    <div class="text-left">
+	        <h3><i></i>Login</h3>
+	        
+	    </div>
+
+	
+
+
+    <!--Body-->
+	    <form action="" method="post"  name="logForm" id="login-frm">
+		    <div class="md-form mt-4">
+		        
+		        <input type="text" class="form-control" id="emaill" placeholder="email">
+		       <span class="text-danger " style="font-size: 12px;"><b>Name contains invalid characters</b></span>
+		    </div>
+
+		    <div class="md-form">
+		        
+		        <input type="password"  class="form-control" id="pass1" placeholder="password">
+		        <span class="text-danger " style="font-size: 12px;"><b>Name contains invalid characters</b></span>
+		    </div>
+				<label><input type="checkbox" name="remember"> Remember Me </label>
+				<div class="text-right">
+		        	<a class="text-right" href="#">Forgot Password?</a>
+		    	</div>
+
+		    <div class="text-center">
+		        <!-- <button class="btn btn-blue">Login</button> -->
+		        <input type="submit" class="btn btn-blue" value="Login" name="Submit" id="btnsubmit" >
+		    </div>
+		</form>
+
+  </div>
+
+		<!--Footer-->
+	<div class="mt-4 text-left">
+	    
+	      New member?<a href="signup.html"> Sign Up</a>
+	</div>
+ 
+</div>
+ <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script>
+    $(function()
+    {
+        $('#btnsubmit').on('click',function()
+        {
+            $(this).val('Login you in...')
+                .attr('disabled','disabled');
+            $('#login-frm').submit();
+        });
+
+    });
+
+    
+</script>
+  </body>
+  </html>
+  

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Register</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+</head>
+
+
+<body>
+      <div class="container mt-5 col-md-4">
+        <div class="card-block">
+
+            <!--Header-->
+            <div class="text-left">
+              <h3><i></i>Register</h3>
+            </div>
+
+            <!-- Messages-->
+            <!-- <div class="row mt-3">
+              <div class="col-lg-6 offset-lg-3" id="alert">
+                <strong id="result" class="text-primary">username is already exists</strong>
+              </div>
+            </div> -->
+
+            <!--/ Message -->
+
+
+            <!--Body-->
+            <form action="" method="post"  name="RegForm" id="register-frm">
+   
+              <div class="md-form mt-4">
+        
+                <input type="text" class="form-control" placeholder="Name" id="name" name="name"  />
+       			<span class="text-danger " style="font-size: 12px;"><b>Name contains invalid characters</b></span>
+              </div>
+
+              <div class="md-form">
+        
+                <input type="email"  class="form-control" placeholder="email" id="email" name="email" >
+        		<span class="text-danger " style="font-size: 12px;"><b>Name contains invalid characters</b></span>
+              </div>
+
+              <div class="md-form">
+        
+                <input type="password"  class="form-control" placeholder="password" id="pass" name="password" >
+        		<span class="text-danger " style="font-size: 12px;"><b>Name contains invalid characters</b></span>
+              </div>
+
+              <div class="md-form">
+        
+              <input type="text" id="mobile" name="mobile" class="form-control" placeholder="Mobile number" >
+        	<span class="text-danger" style="font-size: 12px;"><b>Name contains invalid characters</b></span>
+              </div>
+    
+		            
+              <div class="text-center mt-4">
+              <!-- <button class="btn btn-blue" value="Submit">Register</button> -->
+                <input type="submit" class="btn btn-blue" value="Register" name="Submit" id="btnsubmit"  />
+              </div>
+
+            </form>
+
+        </div>
+
+      <!--Footer-->
+      <div class="mt-4 text-left">
+    
+        Already have an account?<a href="#"> Login</a>
+      </div>
+      
+    </div>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script>
+    $(function()
+    {
+        $('#btnsubmit').on('click',function()
+        {
+            $(this).val('Please wait ...')
+                .attr('disabled','disabled');
+            $('#register-frm').submit();
+        });
+
+    });
+
+    jQuery("#btnsubmit").prop('disabled', true);
+
+    var toValidate = jQuery('#name, #email, #pass'),
+        valid = false;
+    toValidate.keyup(function () {
+        if (jQuery(this).val().length > 0) {
+            jQuery(this).data('valid', true);
+        } else {
+            jQuery(this).data('valid', false);
+        }
+        toValidate.each(function () {
+            if (jQuery(this).data('valid') == true) {
+                valid = true;
+            } else {
+                valid = false;
+            }
+        });
+        if (valid === true) {
+            jQuery("#btnsubmit").prop('disabled', false);
+        } else {
+            jQuery("#btnsubmit").prop('disabled', true);
+        }
+    });
+
+</script>
+</body>
+</html>
